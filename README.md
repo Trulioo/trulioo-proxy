@@ -1,6 +1,14 @@
-## Install
 
-`git clone `
+To make requests at Trulioo GlobalGateway and get around [CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS), it is required that an intermediate server (proxy) in-between is used.
+
+You have the option to develop your own, or simply use Trulioo-Proxy, a lightweight server implemented in Node 🚀 which reduces boilerplate code.
+
+## Install 
+
+```
+git clone https://github.com/Trulioo/trulioo-proxy.git
+node bin/trulioo-proxy
+```
 
 ## Run
 Set credentials through command prompt (in the `.env` file in the project root):
@@ -14,14 +22,6 @@ node bin/trulioo-proxy
 ```
 
 That's it.
-
-## Run with Docker 🐳
-
-You can run the server via docker if you choose to:
-```
-docker pull trulioo-proxy
-docker run trulioo-proxy
-```
 
 ## Learn More
 
