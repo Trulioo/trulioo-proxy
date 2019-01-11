@@ -1,3 +1,4 @@
+# Trulioo-Proxy
 
 To make requests at Trulioo GlobalGateway and get around [CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS), it is required that an intermediate server (proxy) in-between is used.
 
