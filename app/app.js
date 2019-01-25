@@ -4,10 +4,11 @@ var bodyParser = require('body-parser');
 require('dotenv').config()
 var app = express();
 
-const BASE_URL = 'https://api.qa.globalgateway.io';
+const BASE_URL = process.env.TRULIOO_BASE_URL;
 const headers = {
   "Authorization": "Basic " + new Buffer(process.env.TRULIOO_USERNAME + ':' + process.env.TRULIOO_PASSWORD).toString("base64"),
-  "Content-Type": "application/json"
+  "Content-Type": "application/json",
+  "User-Agent": "trulioo-proxy/1.0.0.0"
 };
 
 app.use(bodyParser.json({ limit: '50mb' }));
