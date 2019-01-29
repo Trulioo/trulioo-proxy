@@ -1,7 +1,7 @@
 {
   "name": "trulioo-proxy",
   "version": "0.0.1",
-  "description": "React components for integrating with the Trulioo GlobalGateway API https://www.trulioo.com/",
+  "description": "Express Proxy server for integrating with the Trulioo GlobalGateway API https://www.trulioo.com/",
   "private": true,
   "main": "index.js",
   "scripts": {
@@ -21,7 +21,8 @@
   "devDependencies": {
     "chai": "^3.5.0",
     "chai-http": "^2.0.1",
-    "mocha": "^2.4.5"
+    "mocha": "^2.4.5",
+    "superagent": ">=3.7.0"
   },
   "author": "Menelaos Kotsollaris",
   "license": "Apache 2"
