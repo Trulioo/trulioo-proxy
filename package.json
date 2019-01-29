@@ -1,6 +1,7 @@
 {
   "name": "trulioo-proxy",
-  "version": "0.0.0",
+  "version": "0.0.1",
+  "description": "React components for integrating with the Trulioo GlobalGateway API https://www.trulioo.com/",
   "private": true,
   "main": "index.js",
   "scripts": {
