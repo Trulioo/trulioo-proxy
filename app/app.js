@@ -4,7 +4,6 @@ var bodyParser = require('body-parser');
 require('dotenv').config()
 var app = express();
 
-const BASE_URL = process.env.TRULIOO_BASE_URL;
 const headers = {
   "Authorization": "Basic " + new Buffer(process.env.TRULIOO_USERNAME + ':' + process.env.TRULIOO_PASSWORD).toString("base64"),
   "Content-Type": "application/json",
@@ -19,7 +18,7 @@ app.use(function (_, res, next) {
 });
 
 app.get('/api/countryCodes', (_, res) => {
-  request({ method: 'GET', url: BASE_URL + '/configuration/v1/countrycodes/Identity%20Verification', headers: headers },
+  request({ method: 'GET', url: process.env.TRULIOO_BASE_URL + '/configuration/v1/countrycodes/Identity%20Verification', headers: headers },
     (error, _, body) => {
       if (error) {
         throw new Error(error);
@@ -30,19 +29,20 @@ app.get('/api/countryCodes', (_, res) => {
 });
 
 app.get('/api/getFields/:countryCode', (req, res) => {
-  request({ method: 'GET', url: BASE_URL + '/configuration/v1/fields/Identity%20Verification/' + req.params.countryCode, headers: headers }, (error, response, body) => {
-    if (error) {
-      throw new Error(error);
-    }
-    res.setHeader('Content-Type', 'application/json');
-    res.send({ response: body });
-  });
+  request({ method: 'GET', url: process.env.TRULIOO_BASE_URL + '/configuration/v1/fields/Identity%20Verification/' + req.params.countryCode, headers: headers },
+    (error, _, body) => {
+      if (error) {
+        throw new Error(error);
+      }
+      res.setHeader('Content-Type', 'application/json');
+      res.send({ response: body });
+    });
 });
 
 app.post('/api/verify', (req, res) => {
   request({
     method: 'POST',
-    url: `${BASE_URL}/verifications/v1/verify`,
+    url: `${process.env.TRULIOO_BASE_URL}/verifications/v1/verify`,
     body: req.body,
     headers: headers,
     json: true
