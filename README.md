@@ -22,6 +22,14 @@ TRULIOO_PASSWORD=PASSWORD #change this with your password
 node bin/trulioo-proxy
 ```
 
+## Run with Docker 🐳
+
+```
+docker build . 
+docker build -t IMAGE_NUMBER  # (retrieve the image number via "docker images" command)
+docker run -d --name DOCKER_NAME DOCKER_IMAGE
+```
+
 That's it.
 
 ## Learn More

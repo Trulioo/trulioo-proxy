@@ -8,13 +8,11 @@
     "test": "./node_modules/.bin/mocha --timeout 10000 --reporter spec"
   },
   "dependencies": {
-    "chai": "^4.2.0",
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.9",
     "dotenv": "^6.2.0",
     "express": "~4.16.0",
     "http-errors": "~1.6.2",
-    "mocha": "^5.2.0",
     "morgan": "~1.9.0",
     "pug": "2.0.0-beta11",
     "request": "^2.88.0"
