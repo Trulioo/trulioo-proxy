@@ -1,3 +1,7 @@
 # dependencies
 /node_modules
 .env.test
+
+# locally stored pem files
+PUBLIC.pem
+PRIVATE.pem
