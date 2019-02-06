@@ -2,7 +2,7 @@
 
 To make requests at Trulioo GlobalGateway and get around [CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS), it is required that an intermediate server (proxy) in-between is used.
 
-You have the option to develop your own, or simply use ⚡ **Trulioo-Proxy** ⚡, a lightweight server implemented in Node 🚀 which reduces boilerplate code.
+You have the option to develop your own, or simply use ⚡ **Trulioo-Proxy** ⚡, a lightweight server implemented in Node which aims to reduce required boilerplate code for integrating with the Trulioo API.
 
 ## Install 
 
