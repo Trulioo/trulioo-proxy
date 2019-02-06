@@ -88,7 +88,7 @@ describe("Signature", () => {
                 .get('/api/countryCodes')
                 .end((err, res) => {
 
-                    incorrectSignAlgorithms.forEach(incorrectSignAlgorithm => {
+                    incorrectSignAlgorithms.filter(signAlgo => signAlgo !== process.env.SIGNATURE_ALGORITHM).forEach(incorrectSignAlgorithm => {
                         const verifyResult = getSignatureVerifyResult(res.body, incorrectSignAlgorithm)
                         verifyResult.should.not.be.true
                     })
@@ -119,8 +119,8 @@ describe("Signature", () => {
                         response: '["I","INJECTED","SOMETHING","MALICIOUS","IN","YOUR","SYSTEM"]',
                         signature: res.body.signature
                     }
-                    const verifyResult = getSignatureVerifyResult(manipulatedResponse, process.env.SIGNATURE_ALGORITHM)
 
+                    const verifyResult = getSignatureVerifyResult(manipulatedResponse, process.env.SIGNATURE_ALGORITHM)
                     verifyResult.should.not.be.true
 
                     done()
@@ -132,7 +132,7 @@ describe("Signature", () => {
                 .get('/api/getFields/US')
                 .end((err, res) => {
 
-                    incorrectSignAlgorithms.forEach(incorrectSignAlgorithm => {
+                    incorrectSignAlgorithms.filter(signAlgo => signAlgo !== process.env.SIGNATURE_ALGORITHM).forEach(incorrectSignAlgorithm => {
                         const verifyResult = getSignatureVerifyResult(res.body, incorrectSignAlgorithm)
                         verifyResult.should.not.be.true
                     })
@@ -181,10 +181,11 @@ describe("Signature", () => {
                 .get('/api/getFields/US')
                 .end((err, res) => {
 
-                    incorrectSignAlgorithms.forEach(incorrectSignAlgorithm => {
+                    incorrectSignAlgorithms.filter(signAlgo => signAlgo !== process.env.SIGNATURE_ALGORITHM).forEach(incorrectSignAlgorithm => {
                         const verifyResult = getSignatureVerifyResult(res.body, incorrectSignAlgorithm)
                         verifyResult.should.not.be.true
                     })
+
                     done()
                 });
         });

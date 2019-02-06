@@ -76,7 +76,7 @@ const getSignatureByInput = (input) => {
 
   let privatePem = fs.readFileSync(process.env.PRIVATE_KEY_FILE_PATH)
   let key = privatePem.toString('ascii')
-  let sign = crypto.createSign(process.env.SIGNATURE_ALGORITHM)//process.env.SIGNATURE_ALGORITHM
+  let sign = crypto.createSign(process.env.SIGNATURE_ALGORITHM)
   sign.update(stringifiedInput)
   let signature = sign.sign(key, 'hex')
 
