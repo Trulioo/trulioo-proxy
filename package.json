@@ -6,7 +6,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node ./bin/trulioo-proxy",
-    "test": "./node_modules/.bin/mocha --timeout 10000 --reporter spec"
+    "test": "./node_modules/.bin/mocha --timeout 15000 --reporter spec"
   },
   "dependencies": {
     "cookie-parser": "~1.4.3",
