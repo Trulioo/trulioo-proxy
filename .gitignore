@@ -21,3 +21,7 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# locally stored pem files
+PUBLIC.pem
+PRIVATE.pem

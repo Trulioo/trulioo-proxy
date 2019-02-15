@@ -2,15 +2,35 @@
   "name": "trulioo-react-sample-app",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://www.trulioo.com",
   "dependencies": {
     "react": "^16.8.1",
     "react-dom": "^16.8.1",
-    "react-scripts": "2.1.5"
+    "react-scripts": "2.1.5",
+    "trulioo-react": "0.0.2-rc.4",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.9",
+    "dotenv": "^6.2.0",
+    "express": "~4.16.0",
+    "http-errors": "~1.6.2",
+    "morgan": "~1.9.0",
+    "pug": "2.0.0-beta11",
+    "request": "^2.88.0"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "chai-http": "^2.0.1",
+    "concurrently": "^4.1.0",
+    "mocha": "^2.4.5",
+    "superagent": ">=3.7.0"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start-react-script": "react-scripts start",
+    "start-trulioo-proxy": "node ./src/trulioo-proxy/app/trulioo-proxy",
+    "trulioo-proxy-test": "mocha ./src/trulioo-proxy/test",
+    "start": "concurrently --kill-others \"npm run start-react-script\" \"npm run start-trulioo-proxy\"",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "concurrently --kill-others \"trulioo-proxy-test\" ",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -21,5 +41,7 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "author": "Menelaos Kotsollaris",
+  "license": "Apache 2"
 }
