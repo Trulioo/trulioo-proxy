@@ -5,7 +5,7 @@ class App extends Component {
 
   handleResponse = (e) => {
     // handle verification submission result here ...
-  }
+  } 
 
   render() {
     return (
