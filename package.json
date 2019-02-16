@@ -1,14 +1,13 @@
 {
-  "name": "trulioo-proxy",
-  "version": "0.0.1",
-  "description": "Express Proxy server for integrating with the Trulioo GlobalGateway API https://www.trulioo.com/",
+  "name": "trulioo-react-sample-app",
+  "version": "0.1.0",
   "private": true,
-  "main": "index.js",
-  "scripts": {
-    "start": "node ./bin/trulioo-proxy",
-    "test": "./node_modules/.bin/mocha --timeout 15000 --reporter spec"
-  },
+  "homepage": "https://www.trulioo.com",
   "dependencies": {
+    "react": "^16.8.1",
+    "react-dom": "^16.8.1",
+    "react-scripts": "2.1.5",
+    "trulioo-react": "0.0.2-rc.4",
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.9",
     "dotenv": "^6.2.0",
@@ -21,6 +20,28 @@
   "devDependencies": {
     "chai": "^3.5.0",
     "chai-http": "^2.0.1",
+    "concurrently": "^4.1.0",
+    "mocha": "^2.4.5",
+    "superagent": ">=3.7.0"
+  },
+  "scripts": {
+    "start-react-script": "react-scripts start",
+    "start-trulioo-proxy": "node ./src/trulioo-proxy/app/trulioo-proxy",
+    "trulioo-proxy-test": "mocha ./src/trulioo-proxy/test",
+    "start": "concurrently --kill-others \"npm run start-react-script\" \"npm run start-trulioo-proxy\"",
+    "build": "react-scripts build",
+    "test": "concurrently --kill-others \"trulioo-proxy-test\" ",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
     "mocha": "^2.4.5",
     "superagent": ">=3.7.0"
   },
