@@ -1,5 +1,4 @@
 {
-<<<<<<< HEAD
   "name": "trulioo-react-sample-app",
   "version": "0.1.0",
   "private": true,
@@ -9,18 +8,6 @@
     "react-dom": "^16.8.1",
     "react-scripts": "2.1.5",
     "trulioo-react": "0.0.2-rc.4",
-=======
-  "name": "trulioo-proxy",
-  "version": "0.0.1",
-  "description": "Express Proxy server for integrating with the Trulioo GlobalGateway API https://www.trulioo.com/",
-  "private": true,
-  "main": "index.js",
-  "scripts": {
-    "start": "node ./bin/trulioo-proxy",
-    "test": "./node_modules/.bin/mocha --timeout 15000 --reporter spec"
-  },
-  "dependencies": {
->>>>>>> cb9cd9c90dc9349fd962cd334e5d2df3dbcb8212
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.9",
     "dotenv": "^6.2.0",
@@ -33,7 +20,6 @@
   "devDependencies": {
     "chai": "^3.5.0",
     "chai-http": "^2.0.1",
-<<<<<<< HEAD
     "concurrently": "^4.1.0",
     "mocha": "^2.4.5",
     "superagent": ">=3.7.0"
@@ -56,11 +42,9 @@
     "not ie <= 11",
     "not op_mini all"
   ],
-=======
     "mocha": "^2.4.5",
     "superagent": ">=3.7.0"
   },
->>>>>>> cb9cd9c90dc9349fd962cd334e5d2df3dbcb8212
   "author": "Menelaos Kotsollaris",
   "license": "Apache 2"
 }
