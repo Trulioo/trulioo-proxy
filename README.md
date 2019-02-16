@@ -25,7 +25,7 @@ SIGNATURE_ALGORITHM=
 PRIVATE_KEY_FILE_PATH=
 ```
 
-Simply run the following command in your cmd/terminal and enjoy the ride 🎢🚀:
+Simply run the following command in your cmd/terminal and enjoy the ride 🎢🚀
 
 ```
 # install the libraries needed
