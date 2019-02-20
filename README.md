@@ -1,6 +1,6 @@
 # Trulioo React Sample App
 
-⚡[Trulioo EmbedID](https://github.com/Trulioo/trulioo-react)⚡ (private BETA) leverages the GlobalGateway RestFul API, this API can not be invoked directly through web browser, therefore an intermediary (proxy) hosted on your web server is required to complete the request. For demonstration purposes Trulioo provides the **trulioo-react-sample-app** (sample code of a lightweight Node.js proxy server). Trulioo recommends developing your own intermediary (proxy) for production purposes.
+⚡[Trulioo EmbedID](https://github.com/Trulioo/trulioo-react)⚡ (private BETA) leverages the GlobalGateway RestFul API, this API can not be invoked directly through web browser, therefore an intermediary (proxy) hosted on your web server is required to complete the request. For demonstration purposes Trulioo provides the **trulioo-react-sample-app**, a sample application to demonstrate integrating with Trulioo's EmbedID. Trulioo recommends developing your own intermediary (proxy) for production purposes.
 
 ## Generate Public & Private key
 To avoid [man-in-the-middle attacks](https://en.wikipedia.org/wiki/Man-in-the-middle_attack), trulioo-react-sample-app adds a unique _signature_ to every payload sent; this payload can be verified on a different machine by using the public key to _verify_ its signature.
