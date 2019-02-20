@@ -25,7 +25,7 @@
     "superagent": ">=3.7.0"
   },
   "scripts": { 
-    "start-react-script": "PORT=3006 react-scripts start",
+    "start-react-script": "react-scripts start",
     "start-trulioo-proxy": "node ./src/trulioo-proxy/app/trulioo-proxy",
     "trulioo-proxy-test": "mocha ./src/trulioo-proxy/test",
     "start": "concurrently --kill-others \"npm run start-react-script\" \"npm run start-trulioo-proxy\"",
