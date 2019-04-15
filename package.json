@@ -24,7 +24,7 @@
     "mocha": "^2.4.5",
     "superagent": ">=3.7.0"
   },
-  "scripts": { 
+  "scripts": {
     "start-react-script": "react-scripts start",
     "start-trulioo-proxy": "node ./src/trulioo-proxy/app/trulioo-proxy",
     "trulioo-proxy-test": "mocha ./src/trulioo-proxy/test",
