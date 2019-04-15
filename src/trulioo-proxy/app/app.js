@@ -76,7 +76,9 @@ app.get('/api/getConsents/:countryCode', (req, res) => {
       if (error) {
         throw new Error(error)
       }
+
       const signature = getSignatureByInput(body)
+      
       res.setHeader('Content-Type', 'application/json')
       res.send({
         response: body,
