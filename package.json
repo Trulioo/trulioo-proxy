@@ -30,7 +30,7 @@
     "trulioo-proxy-test": "mocha ./src/trulioo-proxy/test",
     "start": "concurrently --kill-others \"npm run start-react-script\" \"npm run start-trulioo-proxy\"",
     "build": "react-scripts build",
-    "test": "concurrently --kill-others \"trulioo-proxy-test\" ",
+    "test": "concurrently --kill-others \"npm run trulioo-proxy-test\" ",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
