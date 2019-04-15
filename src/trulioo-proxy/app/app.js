@@ -53,6 +53,40 @@ app.get('/api/getFields/:countryCode', (req, res) => {
     })
 })
 
+app.get('/api/getCountrySubdivisions/:countryCode', (req, res) => {
+  request({ method: 'GET', url: process.env.TRULIOO_BASE_URL + '/configuration/v1/countrysubdivisions/' + req.params.countryCode, headers: headers },
+    (error, _, body) => {
+      if (error) {
+        throw new Error(error)
+      }
+      
+      const signature = getSignatureByInput(body)
+
+      res.setHeader('Content-Type', 'application/json')
+      res.send({
+        response: body,
+        signature
+      })
+    })
+})
+
+app.get('/api/getConsents/:countryCode', (req, res) => {
+  request({ method: 'GET', url: process.env.TRULIOO_BASE_URL + '/configuration/v1/consents/Identity%20Verification/' + req.params.countryCode, headers: headers },
+    (error, _, body) => {
+      if (error) {
+        throw new Error(error)
+      }
+
+      const signature = getSignatureByInput(body)
+      
+      res.setHeader('Content-Type', 'application/json')
+      res.send({
+        response: body,
+        signature
+      })
+    })
+})
+
 app.post('/api/verify', (req, res) => {
   request({
     method: 'POST', url: `${process.env.TRULIOO_BASE_URL}/verifications/v1/verify`, body: req.body, headers: headers, json: true
