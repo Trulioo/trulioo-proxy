@@ -70,8 +70,8 @@ app.get('/api/getCountrySubdivisions/:countryCode', (req, res) => {
     })
 })
 
-app.get('/api/getConsents/:countryCode', (req, res) => {
-  request({ method: 'GET', url: process.env.TRULIOO_BASE_URL + '/configuration/v1/consents/Identity%20Verification/' + req.params.countryCode, headers: headers },
+app.get('/api/getDetailedConsents/:countryCode', (req, res) => {
+  request({ method: 'GET', url: process.env.TRULIOO_BASE_URL + '/configuration/v1/detailedConsents/Identity%20Verification/' + req.params.countryCode, headers: headers },
     (error, _, body) => {
       if (error) {
         throw new Error(error)
