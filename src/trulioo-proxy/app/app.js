@@ -21,7 +21,7 @@ app.use(function (_, res, next) {
 })
 
 app.get('/api/getcountrycodes', (_, res) => {
-  request({ method: 'GET', url: process.env.TRULIOO_BASE_URL + '/configuration/v1/countrycodes/Identity%20Verification', headers: headers, "rejectUnauthorized": false},
+  request({ method: 'GET', url: process.env.TRULIOO_BASE_URL + '/configuration/v1/countrycodes/Identity%20Verification', headers: headers},
     (error, _, body) => {
       if (error) {
         throw new Error(error)
@@ -38,7 +38,7 @@ app.get('/api/getcountrycodes', (_, res) => {
 })
 
 app.get('/api/getrecommendedfields/:countryCode', (req, res) => {
-  request({ method: 'GET', url: process.env.TRULIOO_BASE_URL + '/configuration/v1/recommendedfields/Identity%20Verification/' + req.params.countryCode, headers: headers, "rejectUnauthorized": false },
+  request({ method: 'GET', url: process.env.TRULIOO_BASE_URL + '/configuration/v1/recommendedfields/Identity%20Verification/' + req.params.countryCode, headers: headers },
     (error, _, body) => {
       
       if (error) {
@@ -56,7 +56,7 @@ app.get('/api/getrecommendedfields/:countryCode', (req, res) => {
 })
 
 app.get('/api/getcountrysubdivisions/:countryCode', (req, res) => {
-  request({ method: 'GET', url: process.env.TRULIOO_BASE_URL + '/configuration/v1/countrysubdivisions/' + req.params.countryCode, headers: headers, "rejectUnauthorized": false},
+  request({ method: 'GET', url: process.env.TRULIOO_BASE_URL + '/configuration/v1/countrysubdivisions/' + req.params.countryCode, headers: headers},
     (error, _, body) => {
 
       if (error) {
@@ -73,7 +73,7 @@ app.get('/api/getcountrysubdivisions/:countryCode', (req, res) => {
 })
 
 app.get('/api/getdetailedconsents/:countryCode', (req, res) => {
-  request({ method: 'GET', url: process.env.TRULIOO_BASE_URL + '/configuration/v1/detailedConsents/Identity%20Verification/' + req.params.countryCode, headers: headers, "rejectUnauthorized": false },
+  request({ method: 'GET', url: process.env.TRULIOO_BASE_URL + '/configuration/v1/detailedConsents/Identity%20Verification/' + req.params.countryCode, headers: headers },
     (error, _, body) => {
       if (error) {
         throw new Error(error)
@@ -91,7 +91,7 @@ app.get('/api/getdetailedconsents/:countryCode', (req, res) => {
 
 app.post('/api/verify', (req, res) => {
   request({
-    method: 'POST', url: `${process.env.TRULIOO_BASE_URL}/verifications/v1/verify`, body: req.body, headers: headers, json: true, "rejectUnauthorized": false},
+    method: 'POST', url: `${process.env.TRULIOO_BASE_URL}/verifications/v1/verify`, body: req.body, headers: headers, json: true},
     (error, _, body) => {
       if (error) {
         throw new Error(error)
