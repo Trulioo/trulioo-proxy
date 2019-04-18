@@ -26,7 +26,7 @@
   },
   "scripts": {
     "start-react-script": "react-scripts start",
-    "start-trulioo-proxy": "node ./src/trulioo-proxy/app/trulioo-proxy",
+    "start-trulioo-proxy": "nodemon ./src/trulioo-proxy/app/trulioo-proxy",
     "trulioo-proxy-test": "mocha ./src/trulioo-proxy/test",
     "start": "concurrently --kill-others \"npm run start-react-script\" \"npm run start-trulioo-proxy\"",
     "build": "react-scripts build",
