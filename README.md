@@ -13,18 +13,62 @@ There are many ways to generate a RSA key, including [this online tool](http://t
 
 Save the public and private keys to the filesystems and make sure to update the .env file (see below).
 
-## Setup & Run
+## Setup (for api.globaldatacompany.com)
 Set credentials through command prompt (in the `.env` file in the project root):
 
 ```
-TRULIOO_BASE_URL=
-TRULIOO_USERNAME=
-TRULIOO_PASSWORD=
-TRULIOO_PORT=
-SIGNATURE_ALGORITHM=
-PRIVATE_KEY_FILE_PATH=
+# base URL for global gateway
+TRULIOO_BASE_URL='https://api.globaldatacompany.com'
+
+# your global gateway credentials
+TRULIOO_USERNAME='USERNAME'
+TRULIOO_PASSWORD='PASSWORD'
+
+# port of your proxy server
+TRULIOO_PORT=3111
+
+SIGNATURE_ALGORITHM='RSA-SHA256'
+SIGNATURE_ALGORITHM='RSA-SHA256'
+
+# location of your private key - eg PRIVATE.pem
+PRIVATE_KEY_FILE_PATH='PRIVATE.pem'
 ```
 
+## Setup (for gateway-admin.trulioo.com)
+Set credentials through command prompt (in the `.env` file in the project root):
+
+```
+# base URL for developer plan
+TRULIOO_BASE_URL='https://gateway.trulioo.com/trial'
+
+# your developer plan API Key
+TRULIOO_API_KEY='APIKEY'
+
+# port of your proxy server
+TRULIOO_PORT=3111
+
+# hashing algorithm - eg. RSA-SHA256
+SIGNATURE_ALGORITHM='RSA-SHA256'
+
+# location of your private key - eg PRIVATE.pem
+PRIVATE_KEY_FILE_PATH='PRIVATE.pem'
+```
+
+Edit /src/trulioo-proxy/app/app.js
+
+For the developer plan we need to remove the basic header and add our api key instead. The headers const can be changed to:
+
+```javascript
+const headers = {
+  //"Authorization": "Basic " + new Buffer(process.env.TRULIOO_USERNAME + ':' + process.env.TRULIOO_PASSWORD).toString("base64"),
+  "x-trulioo-api-key": process.env.TRULIOO_API_KEY,
+  "Content-Type": "application/json",
+  "User-Agent": "trulioo-proxy/1.0.0.0",
+  "rejectUnauthorized": false,
+}
+```
+
+## Run
 Simply run the following command in your cmd/terminal and enjoy the ride 🎢🚀
 
 ```
