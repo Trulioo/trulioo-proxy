@@ -7,7 +7,7 @@ require('dotenv').config()
 var app = express()
  
 const headers = {
-  "Authorization": "Basic " + new Buffer(process.env.TRULIOO_USERNAME + ':' + process.env.TRULIOO_PASSWORD).toString("base64"),
+  'x-trulioo-api-key': `${process.env.API_KEY}`,
   "Content-Type": "application/json",
   "User-Agent": "trulioo-proxy/1.0.0.0",
   "rejectUnauthorized": false,
@@ -31,7 +31,7 @@ app.get('/api/getcountrycodes', (_, res) => {
 
       res.setHeader('Content-Type', 'application/json')
       res.send({
-        response: body,
+        response: JSON.parse(body),
         signature
       })
     })
@@ -49,7 +49,7 @@ app.get('/api/getrecommendedfields/:countryCode', (req, res) => {
 
       res.setHeader('Content-Type', 'application/json')
       res.send({
-        response: body,
+        response: JSON.parse(body),
         signature
       })
     })
@@ -66,7 +66,7 @@ app.get('/api/getcountrysubdivisions/:countryCode', (req, res) => {
       const signature = getSignatureByInput(body)
       res.setHeader('Content-Type', 'application/json')
       res.send({
-        response: body,
+        response: JSON.parse(body),
         signature
       })
     })
@@ -83,7 +83,7 @@ app.get('/api/getdetailedconsents/:countryCode', (req, res) => {
       
       res.setHeader('Content-Type', 'application/json')
       res.send({
-        response: body,
+        response: JSON.parse(body),
         signature
       })
     })
